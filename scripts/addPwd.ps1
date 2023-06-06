@@ -1,0 +1,1 @@
+python3 "$PSScriptRoot\addPwd\index.py" $args
