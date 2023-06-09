@@ -20,9 +20,11 @@ class MainQt(QMainWindow):
         self.label.setText("double click")
     def contextMenuEvent(self, e):
         context = QMenu(self)
-        context.addAction(QAction("text 1", self).triggered(self.print))
+        context.addAction(QAction("text 1", self))
         context.addAction(QAction("text 2", self))
         context.exec(e.globalPos())
+    
+    
     def print():
         print("click")
 
