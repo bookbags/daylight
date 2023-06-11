@@ -6,8 +6,17 @@ class ToDo extends StatefulWidget{
   State<ToDo> createState()=> _createStateWidget();
 }
 
+class Status{
+  String name;
+  Color state;
+  Status(this.name, this.state);
+}
+
 class _createStateWidget extends State<ToDo>{
-  List<String> things = ["a", "b"];
+  final achieve = Colors.red;
+  final noAchieve = Colors.black12;
+  List<Status> things = [Status("a", Colors.black12), Status("b", Colors.black12)];
+
 
   @override
   Widget build(BuildContext context){
@@ -29,7 +38,7 @@ class _createStateWidget extends State<ToDo>{
                   onSubmitted: (String? value){
                     setState(() {
                       if(value != null){
-                        things.add(value);
+                        things.add(Status(value, noAchieve));
                       }
                     });
                   },
@@ -37,13 +46,25 @@ class _createStateWidget extends State<ToDo>{
               ),
               Column(
                 children: things.map((e) => Container(
-                  padding:EdgeInsets.all(5),
+                  padding:const EdgeInsets.all(5),
                   width: double.infinity,
                   decoration:BoxDecoration(
                     border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid),
                     borderRadius: const BorderRadius.all(Radius.circular(5))
                   ),
-                  child: Text(e, textAlign: TextAlign.left),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(e.name, textAlign: TextAlign.left),
+                      IconButton(
+                        icon:const Icon(Icons.favorite),
+                        color: noAchieve,
+                        onPressed: () => {
+                          setState
+                        },
+                      ),
+                    ]
+                  )
                 )
 
                 ).toList()

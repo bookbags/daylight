@@ -8,3 +8,5 @@ flutter就是一个UI库，可以通过dart来实现界面
 
 > **这是一门新的语言**
 
++ flutter嵌套过多setState失效
++ 路由跳转的时候context不能是根context
