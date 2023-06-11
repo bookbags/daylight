@@ -1,8 +1,13 @@
-void printInteger(int aNumber) {
-  print('The number is $aNumber.');
+int returnTwo(){
+  print("two");
+  return 2;
+}
+
+void test(int a, {String name = "s"}){
+
 }
 
 void main() {
-  var number = 42;
-  printInteger(number); 
+  Set<String> names = {"s", "h", "u", "t", "a", "o"};
+  print(names.contains("m"));
 }
