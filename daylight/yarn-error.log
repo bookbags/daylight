@@ -1,0 +1,41 @@
+Arguments: 
+  D:\AppBag\appData\node.exe D:\AppBag\appData\node_modules\yarn\bin\yarn.js add webpack webpack-cli webpack-dev-serve react react-dom react-router @types/node sass-loader style-loader css-loader antd
+
+PATH: 
+  C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Progra;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NGX;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Windows\system32;C:\Program Files\Java\jdk1.8.0_101\bin;C:\Program Files\Java\jdk1.8.0_101\jre\bin;E:\mingw-w64\mingw64\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;F:\;C:\;D:\;C:\Program Files\Git\cmd;D:\TDM-GCC-64\bin;C:\Program Files\dotnet\;E:\mysql-8.0.30-winx64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;D:\AppBag\app\nvm;D:\AppBag\appData;C:\Program Files (x86)\Subversion\bin;D:\daylight\scripts;C:\Users\shutao\.cargo\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\shutao\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\shutao\AppData\Local\Programs\Python\Python38\;C:\Users\shutao\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\shutao\AppData\Local\Programs\Python\Python39\;D:\script;D:\;C:\Users\shutao\AppData\Local\Microsoft\WindowsApps;E:\pychrom\PyCharm Community Edition 2020.3.2\bin;C:\ProgramData\Anaconda3\Lib\site-packages;D:\IJ\IntelliJ IDEA 2021.1\bin;C:\Users\shutao\.dotnet\tools;C:\Users\shutao\.dotnet\tools;C:\Users\shutao\AppData\Local\Microsoft\WindowsApps;C:\Users\shutao\AppData\Local\Android\Sdk\platform-tools;C:\Users\shutao\AppData\Local\Android\Sdk\emulator;C:\Users\shutao\AppData\Local\Android\Sdk\tools;C:\Users\shutao\AppData\Local\Android\Sdk\tools\bin;D:\AppBag\app\nvm;D:\AppBag\appData;C:\Windows\System32\cmd.exe;D:\bat;C:\Users\shutao\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kf;D:\AppBag\flutter\bin;D:\AppBag\app\Microsoft VS Code Insiders\bin;D:\AppBag\java\bin;D:\AppBag\java\jre\bin;C:\Users\shutao\.dotnet\tools;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.20.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/webpack-dev-serve: Not found
+      at Request.params.callback [as _callback] (D:\AppBag\app\nvm\v16.20.0\node_modules\yarn\lib\cli.js:66145:18)
+      at Request.self.callback (D:\AppBag\app\nvm\v16.20.0\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (D:\AppBag\app\nvm\v16.20.0\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (D:\AppBag\app\nvm\v16.20.0\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1358:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "daylight",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
