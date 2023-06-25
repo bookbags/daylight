@@ -18,8 +18,8 @@ module.exports = {
                 test: /\.tsx?$/,
                 use:"ts-loader"
             },{
-                test: /\.less/,
-                use:["style-laoder", "css-laoder", "less-laoder"]
+                test: /\.sass/,
+                use:["style-laoder", "css-laoder?modules", "less-laoder"]
             }
         ]
     },
