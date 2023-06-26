@@ -18,8 +18,11 @@ module.exports = {
                 test: /\.tsx?$/,
                 use:"ts-loader"
             },{
-                test: /\.sass/,
-                use:["style-laoder", "css-laoder?modules", "less-laoder"]
+                test: /\.less$/,
+                use:["style-loader", {loader:"css-loader",options:{modules:true}}, "less-loader"]
+            },{
+                test:/\.(png|jpg)$/i,
+                use:"file-loader"
             }
         ]
     },
