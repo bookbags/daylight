@@ -18,11 +18,17 @@ const Time = () => {
   const date = Object.keys(timeInfo);
   const cards = date.map((date)=>{
     return (
-      <Card title={date} >
+      <Card 
+        title={date}
+        key={date}
+      >
         <Descriptions column={1}>
           {
             Object.entries(timeInfo[date]).map(item=>(
-              <Descriptions.Item label={item[0]}>{item[1] as ReactNode}</Descriptions.Item>
+              <Descriptions.Item 
+                label={item[0]}
+                key={item[0]}
+              >{item[1] as ReactNode}</Descriptions.Item>
             ))
           }
         </Descriptions>

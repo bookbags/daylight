@@ -20,6 +20,18 @@ const challengeInfo = [
         award:"ICU一日游",
         state:"挑战中",
         key:"三天不吃饭"
+    },{
+        name:"入门MySql",
+        beginTime:"2023-6-27",
+        endTime:"2023-7-10",
+        type:"技能类",
+        award:"300元以下商品任选一件",
+        state: "挑战中",
+        key:"入门MySql",
+        description:"看完SQL必知必会, 能够熟练的进行数据/表的增删改查",
+        schedule:{
+            "2023/6/27":"完成第一课和第二课的学习，并导入相关的数据库文件，使得我能够在本机上运行相关的脚步，完成相关挑战题，so easy"
+        }
     }
 ]
 
@@ -54,7 +66,6 @@ const Challenge = () => {
             dataIndex:"operation",
             key:"operation",
             render:(a, b, c)=>{
-                console.log(a, b, c);
                 return <NavLink to={`./detail?data=${JSON.stringify(b)}`}>详情</NavLink>
             }
         }
