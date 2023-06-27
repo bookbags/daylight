@@ -10,7 +10,8 @@ module.exports = {
     },
     output:{
         path:path.resolve(__dirname, "dist"),
-        filename:"[name].[chunkhash:5].js"
+        filename:"[name].[chunkhash:5].js",
+        publicPath:"/"
     },
     module:{
         rules:[
@@ -28,7 +29,8 @@ module.exports = {
     },
     plugins:[new HtmlWebpackPlugin({template:path.resolve(__dirname, "./public/index.html")})],
     devServer:{
-        open:true
+        open:true,
+        historyApiFallback: true
     },
     stats:"minimal"
 }
