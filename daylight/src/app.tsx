@@ -21,6 +21,9 @@ const menuItems = [
   },{
     label: <NavLink to="/challenge">挑战</NavLink>,
     key: "challenge"
+  },{
+    label: <NavLink to="/commodity">商品</NavLink>,
+    key: "commodity"
   }
 ]
 

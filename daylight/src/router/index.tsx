@@ -6,6 +6,7 @@ import Time from "../pages/time";
 import Gnosis from "../pages/gnosis";
 import Challenge from "../pages/challenge";
 import ChallengeDetail from "../pages/challenge/detail";
+import Commodity from "../pages/commodity";
 
 const router = [
     {
@@ -29,6 +30,9 @@ const router = [
     },{
         path:"/challenge/detail",
         element:<ChallengeDetail></ChallengeDetail>
+    },{
+        path:"/commodity",
+        element:<Commodity/>
     }
 ];
 
