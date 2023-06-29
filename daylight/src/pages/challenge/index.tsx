@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from "./index.less";
-import { Button, Table } from 'antd';
+import { Button, Table, Form } from 'antd';
 import { NavLink } from 'react-router-dom';
-import Operation from "./operation"
+import Operation from "./operation";
+import MyModal from './myModal';
 
-const challengeInfo = [
+export interface IChallenge {
+    name: string;
+    beginTime: string;
+    endTime: string;
+    type: string;
+    award: string;
+    state: string;
+    schedule?: Record<string, string>;
+    description: string;
+    standard?: string[];
+    key?:string;
+}
+
+const challengeInfo:IChallenge[] = [
     {
         name: "三天不睡觉",
         beginTime: "2023-6-23",
@@ -12,7 +26,8 @@ const challengeInfo = [
         type: "生活类",
         award: "ICU一日游",
         state: "挑战中",
-        key: "三天不睡觉"
+        key: "三天不睡觉",
+        description: "坚持三天不碎觉"
     }, {
         name: "三天不吃饭",
         beginTime: "2023-6-23",
@@ -20,7 +35,8 @@ const challengeInfo = [
         type: "生活类",
         award: "ICU一日游",
         state: "挑战中",
-        key: "三天不吃饭"
+        key: "三天不吃饭",
+        description: "坚持三天不碎觉"
     }, {
         name: "入门MySql",
         beginTime: "2023-6-27",
@@ -34,8 +50,8 @@ const challengeInfo = [
             "2023/6/27": "完成第一课和第二课的学习，并导入相关的数据库文件，使得我能够在本机上运行相关的脚步，完成相关挑战题，so easy"
         },
         standard: [
-            {
-                "one": `SQL语言：熟练掌握SQL语言是MySQL开发的基础。了解SQL语法、查询优化、数据操作（插入、更新、删除）和数据查询是至关重要的。
+
+            `SQL语言：熟练掌握SQL语言是MySQL开发的基础。了解SQL语法、查询优化、数据操作（插入、更新、删除）和数据查询是至关重要的。
 
                 数据库设计和规范化：了解数据库设计原则和规范化范式有助于您设计有效和可扩展的数据库结构。这包括表的创建、关系建立、索引设计和数据完整性维护等。
                 
@@ -48,12 +64,15 @@ const challengeInfo = [
                 故障排除和疑难解答：能够识别和解决常见的数据库问题，如查询慢、死锁、数据一致性等。具备故障排除的能力是数据库开发中的重要技能之一。
                 
                 学习能力和持续学习：数据库技术和工具不断发展和更新，作为初级程序员，要有学习新技术和保持更新的意识。跟踪最新的MySQL版本和功能，并了解行业趋势和最佳实践。`
-            }
+
         ]
     }
-]
+];
 
+let targetData = null;
 const Challenge = () => {
+    const [modalState, setModalState] = useState(false);
+    const [form] = Form.useForm();
     const columnConfig = [
         {
             title: "项目名称",
@@ -85,21 +104,27 @@ const Challenge = () => {
             key: "operation",
             render: (a, b, c) => {
                 return (
-                    <div 
+                    <div
                         style={{
-                            display:"flex",
-                            justifyContent:"space-around"
+                            display: "flex",
+                            justifyContent: "space-around"
                         }}
                     >
                         <NavLink to={`./detail?data=${JSON.stringify(b)}`}>详情</NavLink>
                         <span
                             style={{
-                                cursor:"pointer"
+                                cursor: "pointer"
                             }}
+                            onClick={
+                                () => {
+                                    targetData = b;
+                                    setModalState(true);
+                                }
+                            }
                         >修改</span>
                         <span
                             style={{
-                                cursor:"pointer"
+                                cursor: "pointer"
                             }}
                         >删除</span>
                     </div>
@@ -107,7 +132,7 @@ const Challenge = () => {
             }
         }
     ];
-    function addChallenge(value){
+    function addChallenge(value) {
         console.log("添加成功", value);
     }
     return (
@@ -120,6 +145,16 @@ const Challenge = () => {
                 dataSource={challengeInfo}
                 pagination={false}
             ></Table>
+            <MyModal
+                modalState={modalState}
+                onCancel={() => setModalState(false)}
+                onOk={() => {
+                    setModalState(false);
+                    console.log("修改数据", form.getFieldsValue());
+                }}//后续操作，加在这里
+                form={form}
+                data={targetData ?targetData : null}
+            ></MyModal>
         </div>
     )
 }
