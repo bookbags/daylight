@@ -34,9 +34,10 @@ const Commodity = () => {
     return (
         <div className={style.commodity}>
             {
-                commodities.map(item => {
+                commodities.map((item, key) => {
                     return (
                         <Card
+                            key={key}
                             title={item.name}
                             style={{ minWidth: "200px", maxWidth: "300px" }}
                             onClick={
@@ -49,9 +50,12 @@ const Commodity = () => {
                                 {
                                     Object.entries(item).filter((item) => item[0] !== "name")
                                         .map((item) => {
+                                            console.log(item[0]);
                                             if (item[0] === "img") {
                                                 return (
-                                                    <Descriptions.Item>
+                                                    <Descriptions.Item
+                                                        key={item[0]}
+                                                    >
                                                         <Image
                                                             src={item[1]}
                                                             onClick={(e) => { e.stopPropagation() }}
@@ -60,14 +64,19 @@ const Commodity = () => {
                                                 )
                                             } else if (item[0] === "superLink") {
                                                 return (
-                                                    <Descriptions.Item>
+                                                    <Descriptions.Item
+                                                        key={item[0]}
+                                                    >
                                                         <Button style={{ margin: "0 auto" }}>
                                                             <a href={item[1]} target='_block'>购买</a>
                                                         </Button>
                                                     </Descriptions.Item>
                                                 )
                                             } else {
-                                                return <Descriptions.Item label={item[0]}>{item[1]}</Descriptions.Item>
+                                                return <Descriptions.Item 
+                                                            label={item[0]}
+                                                            key={item[0]}
+                                                        >{item[1]}</Descriptions.Item>
                                             }
                                         })
                                 }
@@ -80,6 +89,7 @@ const Commodity = () => {
                 open={modalState}
                 onOk={() => setModalState(false)}
                 onCancel={() => setModalState(false)}
+                closable={false}
             ></MyTooltip>
         </div>
     );

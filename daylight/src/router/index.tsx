@@ -7,6 +7,8 @@ import Gnosis from "../pages/gnosis";
 import Challenge from "../pages/challenge";
 import ChallengeDetail from "../pages/challenge/detail";
 import Commodity from "../pages/commodity";
+import Test from "../pages/test";
+import Chart from "../pages/chart";
 
 const router = [
     {
@@ -33,6 +35,12 @@ const router = [
     },{
         path:"/commodity",
         element:<Commodity/>
+    },{
+        path: "/test",
+        element: <Test></Test>
+    },{
+        path: "/chart",
+        element: <Chart/>
     }
 ];
 

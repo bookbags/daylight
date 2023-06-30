@@ -24,6 +24,12 @@ const menuItems = [
   },{
     label: <NavLink to="/commodity">商品</NavLink>,
     key: "commodity"
+  },{
+    label: <NavLink to="/test">测试</NavLink>,
+    key: "test"  
+  },{
+    label: <NavLink to="/chart">聊天</NavLink>,
+    key:"chart"
   }
 ]
 
