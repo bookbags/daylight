@@ -30,6 +30,9 @@ const menuItems = [
   },{
     label: <NavLink to="/chart">聊天</NavLink>,
     key:"chart"
+  },{
+    label: <NavLink to="/demo">demo</NavLink>,
+    key:"demo"
   }
 ]
 

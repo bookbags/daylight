@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:qq/pages/communication/friendInfo.dart";
 import "pages/weixin/communicationDetail.dart";
 import 'pages/me.dart';
 import "pages/communication.dart";
@@ -79,8 +80,14 @@ class _MyAppState extends State<MyApp> {
       ),
       routes: {
         "communicationDetail": (context) {
-          final params = ModalRoute.of(context)?.settings.arguments ?? {"id":"null"};
+          final params =
+              ModalRoute.of(context)?.settings.arguments ?? {"id": "null"};
           return CommunicationDetail(params: params);
+        },
+        "friendDetail": (context) {
+          final params =
+              ModalRoute.of(context)?.settings.arguments ?? {"id": "null"};
+          return FriendInfo(params: params as Map);
         }
       },
     );

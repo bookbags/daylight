@@ -9,6 +9,7 @@ import ChallengeDetail from "../pages/challenge/detail";
 import Commodity from "../pages/commodity";
 import Test from "../pages/test";
 import Chart from "../pages/chart";
+import Demo from "../pages/demo";
 
 const router = [
     {
@@ -41,6 +42,9 @@ const router = [
     },{
         path: "/chart",
         element: <Chart/>
+    },{
+        path: "/demo",
+        element: <Demo></Demo>
     }
 ];
 

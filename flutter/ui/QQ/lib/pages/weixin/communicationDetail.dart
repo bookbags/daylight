@@ -31,7 +31,8 @@ class CommunicationDetailState extends State<CommunicationDetail> {
               icon: Icon(
                 Icons.more_horiz,
                 color: appbarTextColor,
-              ))
+              )
+          )
         ],
       ),
       body: Column(children: [
