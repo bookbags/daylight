@@ -45,3 +45,5 @@
 + 在 JavaScript 中，八进制数以 0 开头表示，但只能表示整数值。带有小数点的数字不是有效的八进制数表示。其他语言中大多也不支持八进制表示小数
 
     ![image-20230703102413952](A:\bookbag\img\markdown\image-20230703102413952.png)
+    
++ flutter中navigatorBar必须大于两项，但是当项数大于3项时，无法显示，此时可以添加Type为BottomNavigationBarType.fixed
