@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
+import "pages/weixin/communicationDetail.dart";
 import 'pages/me.dart';
 import "pages/communication.dart";
 import "pages/find.dart";
 import "pages/weixin.dart";
-import "./pages/test.dart";
 
 void main() {
   runApp(MyApp());
@@ -77,6 +77,12 @@ class _MyAppState extends State<MyApp> {
               BottomNavigationBarItem(icon: Icon(Icons.person), label: "我")
             ]),
       ),
+      routes: {
+        "communicationDetail": (context) {
+          final params = ModalRoute.of(context)?.settings.arguments ?? {"id":"null"};
+          return CommunicationDetail(params: params);
+        }
+      },
     );
   }
 }
