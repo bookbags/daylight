@@ -25,7 +25,9 @@ class InfoItem extends StatelessWidget {
                 ),
               )),
           Expanded(
-              child: Column(
+            child: DefaultTextStyle(
+              style: TextStyle(color: Colors.black),
+              child:Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -33,14 +35,18 @@ class InfoItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 25),
                   ),
-                  Text(date)
+                  Text(date, style: TextStyle(fontSize: 20))
                 ],
               ),
-              Text(newInfo)
+              Text(
+                newInfo,
+                style: TextStyle(fontSize: 20),
+              )
             ],
-          ))
+          )),  
+          )
         ],
       ),
     );

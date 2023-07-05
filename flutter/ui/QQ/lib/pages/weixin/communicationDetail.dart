@@ -31,8 +31,7 @@ class CommunicationDetailState extends State<CommunicationDetail> {
               icon: Icon(
                 Icons.more_horiz,
                 color: appbarTextColor,
-              )
-          )
+              ))
         ],
       ),
       body: Column(children: [
@@ -69,11 +68,18 @@ class CommunicationDetailState extends State<CommunicationDetail> {
                 height: 40,
                 child: TextField(
                   decoration: const InputDecoration(
-                    fillColor: Color.fromARGB(255, 218, 218, 218),
-                    filled: true,
-                    border: InputBorder.none,
-                  ),
+                      fillColor: Color.fromARGB(255, 218, 218, 218),
+                      filled: true,
+                      border: OutlineInputBorder(),
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 0, horizontal: 8)),
                   controller: _textControl,
+                  onChanged: (value) {
+                    print("value is $value");
+                  },
+                  onSubmitted: (value) {
+                    print("提交");
+                  },
                 ),
               )),
               IconButton(onPressed: () => {}, icon: Icon(Icons.mood)),

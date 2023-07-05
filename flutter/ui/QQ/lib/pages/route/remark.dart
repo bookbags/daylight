@@ -21,7 +21,7 @@ class _RemarkState extends State<Remark> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 5),
               height: 30,
-              width: 70,
+              width: 80,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
                 onPressed: () => {
