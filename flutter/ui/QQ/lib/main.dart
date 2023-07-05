@@ -5,6 +5,7 @@ import 'pages/me.dart';
 import "pages/communication.dart";
 import "pages/find.dart";
 import "pages/weixin.dart";
+import "pages/route/remark.dart";
 
 void main() {
   runApp(MyApp());
@@ -88,6 +89,11 @@ class _MyAppState extends State<MyApp> {
           final params =
               ModalRoute.of(context)?.settings.arguments ?? {"id": "null"};
           return FriendInfo(params: params as Map);
+        },
+        "remark":(context){
+          final params =
+              ModalRoute.of(context)?.settings.arguments ?? {"id": "null"};
+          return Remark(params: params as Map);
         }
       },
     );

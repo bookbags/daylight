@@ -89,10 +89,10 @@ class Communication extends StatelessWidget {
           }).toList()),
           Positioned(
             right: 5,
-            top: 10,
+            top: 0,
             child: Column(
               children: str.split("").map((item) {
-                return Text(item);
+                return Text(item, style: TextStyle(fontSize: 13),);
               }).toList(),
             ),
           )
