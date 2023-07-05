@@ -1,24 +1,24 @@
 import "package:flutter/material.dart";
 
 class Item extends StatelessWidget {
-  late final String name;
-  late final String avatar;
-  Item({required this.name, required this.avatar});
+  final String name;
+  final String avatar;
+  const Item({super.key, required this.name, required this.avatar});
   @override
   Widget build(BuildContext context) {
-    return Listener(
-      onPointerDown: (event) {
+    return GestureDetector(
+      onTap: () {
         Navigator.pushNamed(context, "friendDetail");
       },
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             border: Border(
                 bottom: BorderSide(
-                    color: const Color.fromARGB(110, 158, 158, 158)))),
-        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 6),
+                    color: Color.fromARGB(110, 158, 158, 158)))),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 6),
         child: Row(children: [
           Padding(
-            padding: EdgeInsets.only(right: 5),
+            padding: const EdgeInsets.only(right: 5),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: Image.asset(avatar, width: 50)),
