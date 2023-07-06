@@ -31,6 +31,11 @@ app.post("/login", (req, res)=>{
     connection.query(`
         select name, age, avatar from User where name = ? and password = ?
     `,[body.name, body.pwd], function(err, result){
+        if(!err){
+            console.log(`${body.name} 登录成功`);
+        }else{
+            console.log(`${body.name} 登录失败`);
+        }
         res.send(result);
     })
 })

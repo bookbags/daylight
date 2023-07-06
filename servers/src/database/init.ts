@@ -18,4 +18,14 @@ connection.query(
     console.log(`err is ${err}`);
 });
 
+connection.query(
+    `create table if not exists Friend(
+        name varchar(20) not null,
+        friendName varchar(20) not null,
+        primary key(name, friendName)
+    )`, function(err, result){
+        console.log(result);
+        console.log(`err is ${err}`);
+    });
+
 export default connection;

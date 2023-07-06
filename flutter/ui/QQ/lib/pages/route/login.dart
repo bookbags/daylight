@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:dio/dio.dart";
+import "../../store/index.dart";
 
 class Login extends StatefulWidget {
   @override
@@ -52,19 +53,35 @@ class _LoginState extends State<Login> {
                     hintText: "请输入密码"),
               ),
             )),
-        ElevatedButton(
-            onPressed: () async {
-              final dio = Dio();
-              final res = await dio.post("http://192.168.3.50:8095/login",
-                  data: {"name": nameControl.text, "pwd": pwsControl.text});
+        DecoratedBox(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [Colors.blue, Colors.green]),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black, offset: Offset(2, 2), blurRadius: 5)
+              ]),
+          child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: TextButton(
+                  onPressed: () async {
+                    final dio = Dio();
+                    final res = await dio.post("http://192.168.3.50:8095/login",
+                        data: {
+                          "name": nameControl.text,
+                          "pwd": pwsControl.text
+                        });
 
-              if ((res.data as List).isEmpty) {
-                print("用户名或者密码错误");
-              } else {
-                Navigator.of(context).pushNamed("home");
-              }
-            },
-            child: const Text("登录"))
+                    if ((res.data as List).isEmpty) {
+                      print("用户名或者密码错误");
+                    } else {
+                      GlobalState.of(context).updateState(res.data);
+                      Navigator.of(context).pushNamed("home");
+                    }
+                  },
+                  child:
+                      const Text("登录", style: TextStyle(color: Colors.black)))),
+        )
       ]),
     ));
   }
