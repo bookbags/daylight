@@ -2,8 +2,8 @@ import "package:flutter/material.dart";
 import "package:qq/pages/components/withLabel.dart";
 
 class Remark extends StatefulWidget {
-  Map? params;
-  Remark({this.params});
+  final Map params;
+  const Remark({super.key, required this.params});
   @override
   _RemarkState createState() => _RemarkState(params: params);
 }

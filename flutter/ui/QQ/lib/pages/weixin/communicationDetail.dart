@@ -31,13 +31,16 @@ class CommunicationDetailState extends State<CommunicationDetail> {
               icon: Icon(
                 Icons.more_horiz,
                 color: appbarTextColor,
-              ))
+              )),
         ],
       ),
       body: Column(children: [
         Expanded(
             child: ListView(
-          children: [const Text("c"), const Text("d")],
+            children: [
+              const Text("c"),
+              const Text("d")
+            ],
         )),
         Container(
           decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
